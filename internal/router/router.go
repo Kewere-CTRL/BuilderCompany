@@ -24,7 +24,7 @@ func SetupRouter() *gin.Engine {
 
 	RegisterUserRoutes(r)
 	LoginUserRoutes(r)
-	GetCompany(r)
-	GetServices(r)
+	GetCompanyRoutes(r)
+	GetServicesRoutes(r)
 	return r
 }
