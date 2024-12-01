@@ -1,4 +1,4 @@
-package handlers
+package user
 
 import (
 	"github.com/Kewere-CTRL/BuilderCompany/internal/db"

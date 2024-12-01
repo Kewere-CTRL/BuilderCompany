@@ -28,9 +28,14 @@ func InitDB() {
 	log.Println("Успешное подключение к бд")
 
 	migrate()
+	RunSeeds()
 }
 func migrate() {
-	err := DB.AutoMigrate(&models.User{})
+	err := DB.AutoMigrate(
+		&models.User{},
+		&models.Project{},
+		&models.Services{},
+	)
 	if err != nil {
 		log.Fatalf("Ошибка миграций: %s", err)
 	}
