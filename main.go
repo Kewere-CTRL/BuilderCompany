@@ -30,5 +30,5 @@ func main() {
 	serverPort := viper.GetInt("server.port")
 
 	server := router.SetupRouter()
-	server.Run(fmt.Sprintf(":%d", serverPort))
+	server.Run(fmt.Sprintf("0.0.0.0:%d", serverPort))
 }
