@@ -35,6 +35,7 @@ func migrate() {
 		&models.User{},
 		&models.Project{},
 		&models.Services{},
+		&models.CallbackForm{},
 	)
 	if err != nil {
 		log.Fatalf("Ошибка миграций: %s", err)

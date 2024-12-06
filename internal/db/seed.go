@@ -54,44 +54,47 @@ func SeedProjects() {
 }
 
 func SeedServices() {
+	if err := DB.Exec("TRUNCATE TABLE services RESTART IDENTITY CASCADE").Error; err != nil {
+		log.Fatal("Error truncating table: ", err)
+	}
 	services := []models.Services{
 		{
-			Label:       "Уборка улиц",
+			Label:       "Cleaning",
 			Description: "Ежедневная уборка улиц города специализированной техникой.",
 			Price:       5000.00,
 		},
 		{
-			Label:       "Обслуживание освещения",
+			Label:       "Lighting",
 			Description: "Проверка и замена ламп в уличных фонарях.",
 			Price:       10000.00,
 		},
 		{
-			Label:       "Ремонт дорожного покрытия",
+			Label:       "Roadwork",
 			Description: "Производство работ по восстановлению дорожного покрытия, включая укладку асфальта и устранение ям.",
 			Price:       15000.00,
 		},
 		{
-			Label:       "Озеленение городских территорий",
+			Label:       "Greening",
 			Description: "Посадка деревьев, кустарников и создание клумб для улучшения городской экологии.",
 			Price:       8000.00,
 		},
 		{
-			Label:       "Установка уличных скамеек",
+			Label:       "Benches",
 			Description: "Проектирование и установка уличных скамеек в общественных местах и парках города.",
 			Price:       12000.00,
 		},
 		{
-			Label:       "Обслуживание ливневых канализаций",
+			Label:       "Drainage",
 			Description: "Проверка и очистка системы ливневых канализаций от мусора и засоров.",
 			Price:       6000.00,
 		},
 		{
-			Label:       "Монтаж системы видеонаблюдения",
+			Label:       "Surveillance",
 			Description: "Установка и настройка уличных камер видеонаблюдения для обеспечения безопасности в городе.",
 			Price:       25000.00,
 		},
 		{
-			Label:       "Ремонт фасадов зданий",
+			Label:       "Facade",
 			Description: "Капитальный и косметический ремонт фасадов жилых и общественных зданий.",
 			Price:       18000.00,
 		},

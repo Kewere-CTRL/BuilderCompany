@@ -26,5 +26,9 @@ func SetupRouter() *gin.Engine {
 	LoginUserRoutes(r)
 	GetCompanyRoutes(r)
 	GetServicesRoutes(r)
+	GetCalculationServicesCostRoutes(r)
+	PostCallbackFormRoutes(r)
+	GetCallbackCallbackFormRoutes(r)
+
 	return r
 }
