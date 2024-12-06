@@ -16,6 +16,7 @@ func GetCallback(r *gin.Context) {
 	}
 	if len(callbackForm) == 0 {
 		r.JSON(http.StatusOK, gin.H{"message": "CallbackForm not found"})
+		return
 	}
 
 	r.JSON(http.StatusOK, gin.H{"data": callbackForm})
