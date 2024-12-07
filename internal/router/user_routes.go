@@ -12,5 +12,5 @@ func RegisterUserRoutes(r *gin.Engine) {
 
 // Авторизация
 func LoginUserRoutes(r *gin.Engine) {
-	r.GET("/auth/login", user.LoginUser)
+	r.POST("/auth/login", user.LoginUser)
 }
